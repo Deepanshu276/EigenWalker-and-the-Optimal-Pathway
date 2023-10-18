@@ -43,7 +43,7 @@ In the provided example, a 15x15 stochastic matrix `A` and an initial vector `v`
 
 Overall, the time complexity of the code is dominated by the Dijkstra's algorithm part. Given the construction of a complete graph (all-to-all connections), the code has a time complexity of approximately O(V^2 * log V), where V is the number of states.
 
-# Ques:  Discuss how your algorithm could scale to large dimensions (approaching infinity) and provide any algorithms or approximations you'd employ for this.
+## Ques:  Discuss how your algorithm could scale to large dimensions (approaching infinity) and provide any algorithms or approximations you'd employ for this.
 
 To scale my algorithm to handle large dimensions efficiently, I employ the A* algorithm, a powerful pathfinding technique, and several strategies. This combination ensures that I can navigate large stochastic matrices while finding the optimal path effectively.
 
@@ -73,7 +73,7 @@ To scale my algorithm to handle large dimensions efficiently, I employ the A* al
 By combining the A* algorithm with a well-designed heuristic and implementing these strategies, I can efficiently scale my algorithm to handle large stochastic matrices. The ability to prioritize promising paths, leverage parallel processing, and optimize memory usage makes a substantial difference in performance, especially as the matrix dimensions approach infinity.
 
 
-# Ques: Provide a mathematical proof that your algorithm will always work for any stochastic matrix `A` and any valid initial position vector `v`.
+## Ques: Provide a mathematical proof that your algorithm will always work for any stochastic matrix `A` and any valid initial position vector `v`.
 
 Ans : To provide a mathematical proof that the algorithm works for any stochastic matrix `A` and any valid initial position vector `v`, we need to show that the algorithm correctly computes the shortest path based on the probabilities and cumulative probabilities. The proof consists of the following steps:
 
@@ -116,7 +116,7 @@ Ans : To provide a mathematical proof that the algorithm works for any stochasti
    - The algorithm can be generalized to any stochastic matrix `A` and any valid initial position vector `v` because it operates on the properties of the matrix and vector, not on 
      specific values. It handles any combination of probabilities and states within a stochastic matrix.
 
-# Ques: Can your algorithm be generalized to non-stochastic matrices? Discuss the changes or considerations needed.
+## Ques: Can your algorithm be generalized to non-stochastic matrices? Discuss the changes or considerations needed.
 
 Ans: If we want to generalize the algorithm to non-stochastic matrices, there are several changes and considerations needed:
 
