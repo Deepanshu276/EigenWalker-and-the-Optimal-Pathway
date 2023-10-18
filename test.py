@@ -16,14 +16,14 @@ class TestMainCode(unittest.TestCase):
         expected_path = [9,14]
         self.assertEqual(shortest_path, expected_path)
 
-        # Test Case 3: Verify the behavior when n=0
+    # Test Case 3: Verify the behavior when n=0
     def test_zero_n(self):
         n = 0
         v_new = np.dot(np.linalg.matrix_power(A, n), v)
         expected_v_new = v
         assert np.allclose(v_new, expected_v_new)
 
-# Test Case 4: Verify the behavior when A is the identity matrix
+    # Test Case 4: Verify the behavior when A is the identity matrix
     def test_identity_matrix(self):
         A_identity = np.identity(len(A))
         v_new = np.dot(np.linalg.matrix_power(A_identity, n), v)
@@ -62,12 +62,9 @@ class TestMainCode(unittest.TestCase):
     def test_large_values_in_A(self):
         A_large = np.array([[2, 0.1], [0.05, 3]])
         n = 3
-
-        # Create a vector that matches the number of columns in A_large
-        v_large = np.array([1, 2])  # Modify this according to your requirements
-
+        v_large = np.array([1, 2])
         v_new = np.dot(np.linalg.matrix_power(A_large, n), v_large)
-        expected_v_new = v_large  # Since A_large is the identity matrix
+        expected_v_new = v_large 
         self.assertTrue(np.allclose(v_new, expected_v_new, atol=1e-8))
 
 
@@ -75,8 +72,6 @@ class TestMainCode(unittest.TestCase):
     def test_large_n(self):
         n = 100
         v_new = np.dot(np.linalg.matrix_power(A, n), v)
-        # The expected result for a large n is hard to compute manually
-        # You can check if the result is a valid probability distribution
         assert np.all(v_new >= 0) and np.isclose(np.sum(v_new), 1.0, atol=1e-8)
 
 if __name__ == "__main__":
